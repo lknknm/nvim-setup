@@ -6,7 +6,7 @@ return {
             draw = {
                 delay = 10,
                 animation = function(s,n)
-                    return 2
+                    return 0.5
                 end,
             },
             opts = {
