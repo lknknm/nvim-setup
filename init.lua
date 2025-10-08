@@ -37,21 +37,16 @@ require("lazy").setup({
 local builtin = require("telescope.builtin")
 
 require('mini.indentscope').setup({
-    options = {
-        -- Type of scope's border: which line(s) with smaller indent to
-        -- categorize as border. Can be one of: 'both', 'top', 'bottom', 'none'.
+    draw = {
+        delay = 10,
+        animation = function(s,n)
+            return 5
+        end,
+    },
+    opts = {
         border = 'both',
-
-        -- Whether to use cursor column when computing reference indent.
-        -- Useful to see incremental scopes with horizontal cursor movements.
         indent_at_cursor = true,
-
-        -- Maximum number of lines above or below within which scope is computed
         n_lines = 10000,
-
-        -- Whether to first check input line to be a border of adjacent scope.
-        -- Use it if you want to place cursor on function header to get scope of
-        -- its body.
         try_as_border = false,
     },
     symbol = "│",
@@ -60,7 +55,7 @@ require("catppuccin").setup({ opts = { transparent_background = true },})
 require("lualine").setup()
 require("telescope")
 require("nvim-treesitter.configs").setup({
-    ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "cpp" },
+    ensure_installed = { "asm", "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "cpp" },
     sync_install = false,
     highlight = { enable = true },
     indent = { enable = true },
