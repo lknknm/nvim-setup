@@ -17,22 +17,22 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
-require("lazy").setup({
-  spec = {
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000, opts = { transparent_background = true, }},
-    { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }},
-    { "nvim-telescope/telescope.nvim", tag = "0.1.5", dependencies = { 'nvim-lua/plenary.nvim' }}, 
-    { "nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate" },
-    { "nvim-treesitter/nvim-treesitter-context", dependencies = { "nvim-treesitter/nvim-treesitter" }},
-    { 'nvim-mini/mini.indentscope', version = '*' },
-  },
-  checker = { enabled = true },
-  opts = {
-    -- symbol = "▏",
-    symbol = "│",
-    options = { try_as_border = true },
-  }
-})
+require("lazy").setup("plugins")
+--require("lazy").setup({
+ -- spec = {
+  --  { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }},
+   -- { "nvim-telescope/telescope.nvim", tag = "0.1.5", dependencies = { 'nvim-lua/plenary.nvim' }}, 
+ --   { "nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate" },
+ --   { "nvim-treesitter/nvim-treesitter-context", dependencies = { "nvim-treesitter/nvim-treesitter" }},
+ --   { 'nvim-mini/mini.indentscope', version = '*' },
+ -- },
+ -- checker = { enabled = true },
+ -- opts = {
+ --   -- symbol = "▏",
+ --   symbol = "│",
+ --   options = { try_as_border = true },
+ -- }
+--})
 
 local builtin = require("telescope.builtin")
 
@@ -40,18 +40,17 @@ require('mini.indentscope').setup({
     draw = {
         delay = 10,
         animation = function(s,n)
-            return 5
+            return 2
         end,
     },
     opts = {
         border = 'both',
         indent_at_cursor = true,
         n_lines = 10000,
-        try_as_border = false,
+        try_as_border = true,
     },
-    symbol = "│",
+    symbol = "│", 
 })
-require("catppuccin").setup({ opts = { transparent_background = true },})
 require("lualine").setup()
 require("telescope")
 require("nvim-treesitter.configs").setup({
