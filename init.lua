@@ -21,6 +21,9 @@ vim.opt.statuscolumn = "  %{v:lnum}     "
 vim.opt.cursorline = true
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
+vim.keymap.set("n", "<leader>vs", ":vsplit<Return>", opts)
+
+
 --------------------------------------
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
