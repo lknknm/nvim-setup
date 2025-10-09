@@ -35,7 +35,7 @@ vim.keymap.set('v', '<S-Tab>', '<gv', { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>vs", ":vsplit<Return>", opts)
 
-vim.opt.statuscolumn = "  %{v:lnum}     "
+vim.opt.statuscolumn = "%s  %{v:lnum}     "
 vim.opt.cursorline = true
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
