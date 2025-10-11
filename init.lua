@@ -9,17 +9,25 @@ vim.g.maplocalleader = "\\"
 ------------------------------------------------------------------------------------------
 --- Keybindings::
 -- Move current line up/down with Alt-j/k
-vim.keymap.set('n', '<M-k>', ':m .-2<CR>==', { noremap = true, silent = true })
-vim.keymap.set('n', '<M-j>', ':m .+1<CR>==', { noremap = true, silent = true })
-vim.keymap.set('v', '<M-j>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
-vim.keymap.set('v', '<M-k>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+
+vim.keymap.set('n', '<A-j>', '<cmd>m .+1<CR>==',     { noremap = true, silent = true })
+vim.keymap.set('n', '<A-k>', '<cmd>m .-2<CR>==',     { noremap = true, silent = true })
+vim.keymap.set('v', '<A-j>', "<cmd>m '>+1<CR>gv=gv", { noremap = true, silent = true })
+vim.keymap.set('v', '<A-k>', "<cmd>m '<-2<CR>gv=gv", { noremap = true, silent = true })
+
+-- macOS Keybindings
+vim.keymap.set('n', 'ʝ',     '<cmd>m .+1<CR>==',     { noremap = true, silent = true })
+vim.keymap.set('n', 'ĸ',     '<cmd>m .-2<CR>==',     { noremap = true, silent = true })
+
 vim.keymap.set('n', '<S-Return>', ":vsplit<Return>", opts)
 
 -- Duplicate line down (Shift+Alt+j)
-vim.keymap.set('n', '<M-J>', ':copy .<CR>', { noremap = true, silent = true })
+vim.keymap.set({'n', 'v'}, '<M-J>', ':copy .<CR>', { noremap = true, silent = true })
+vim.keymap.set({'n', 'v'}, '&', ':copy .<CR>', { noremap = true, silent = true })
 
 -- Duplicate line up (Shift+Alt+k)
 vim.keymap.set('n', '<M-K>', ':copy .-1<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', ''    , ':copy .-1<CR>', { noremap = true, silent = true })
 
 -- Indent with Tab in Normal mode
 vim.keymap.set('n', '<Tab>', '>>', { noremap = true, silent = true })
