@@ -2,6 +2,7 @@ vim.o.expandtab = true
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
+vim.o.tags = "./tags;, tags"
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
@@ -41,7 +42,10 @@ vim.keymap.set('n', '<S-Tab>', '<<', { noremap = true, silent = true })
 -- Shift+Tab to unindent in Visual mode (and maintain selection)
 vim.keymap.set('v', '<S-Tab>', '<gv', { noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>vs", ":vsplit<Return>", opts)
+vim.keymap.set("n", "<leader>vs", ":vsplit<return>", opts)
+
+local headers = require('config.headers')
+vim.keymap.set('n', '<leader>ta', headers.find_alternate, { desc = 'Switch header/source (Public/Private aware)' })
 
 vim.opt.statuscolumn = "%s %{v:lnum}     "
 vim.opt.cursorline = true
@@ -69,4 +73,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
 require("lazy").setup("plugins")
-------------------------------------------------------------------------------------------
+
+
+vim.cmd(':LspStop<return>')

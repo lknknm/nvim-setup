@@ -45,8 +45,8 @@ return {
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
             vim.keymap.set('n', '<leader>bd', vim.lsp.buf.definition, {})
             vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {})
-            vim.keymap.set('n', '<leader>lst', vim.lsp.stop_client, {})
-            vim.keymap.set('n', '<leader>lss', vim.lsp.start, {})
+            vim.keymap.set('n', '<leader>lst', ':LspStop<return>', {})
+            vim.keymap.set('n', '<leader>lss', ':LspStart<return>', {})
 
             -- LSP-specific configurations
             vim.lsp.config('lua_ls', {})
