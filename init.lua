@@ -20,7 +20,7 @@ vim.keymap.set('v', '<A-k>', "<cmd>m '<-2<CR>gv=gv", { noremap = true, silent = 
 vim.keymap.set('n', 'ʝ',     '<cmd>m .+1<CR>==',     { noremap = true, silent = true })
 vim.keymap.set('n', 'ĸ',     '<cmd>m .-2<CR>==',     { noremap = true, silent = true })
 
-vim.keymap.set('n', '<S-Return>', ":vsplit<Return>", opts)
+vim.keymap.set('n', '<S-Return>', ":vsplit<Return>", { noremap = true, silent = true })
 
 -- Duplicate line down (Shift+Alt+j)
 vim.keymap.set({'n', 'v'}, '<M-J>', ':copy .<CR>', { noremap = true, silent = true })
@@ -42,7 +42,7 @@ vim.keymap.set('n', '<S-Tab>', '<<', { noremap = true, silent = true })
 -- Shift+Tab to unindent in Visual mode (and maintain selection)
 vim.keymap.set('v', '<S-Tab>', '<gv', { noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>vs", ":vsplit<return>", opts)
+vim.keymap.set("n", "<leader>vs", ":vsplit<return>", { noremap = true, silent = true })
 
 local headers = require('config.headers')
 vim.keymap.set('n', '<leader>ta', headers.find_alternate, { desc = 'Switch header/source (Public/Private aware)' })
@@ -50,6 +50,12 @@ vim.keymap.set('n', '<leader>ta', headers.find_alternate, { desc = 'Switch heade
 vim.opt.statuscolumn = "%s %{v:lnum}     "
 vim.opt.cursorline = true
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
+-- Yank/Copy to/from system register
+vim.keymap.set({'n', 'v'}, '<leader>y', '"+y', { noremap = true, silent = true})
+vim.keymap.set({'n', 'v'}, '<leader>p', '"+p', { noremap = true, silent = true})
+
+vim.keymap.set({'n', 'v'}, '<leader>sr', ':%s/', { noremap = true, silent = true})
 
 ------------------------------------------------------------------------------------------
 
