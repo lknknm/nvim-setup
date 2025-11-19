@@ -25,6 +25,29 @@ return {
             window_config = {},
           },
         }
+                -- Define a function that sets all your custom highlights
+        local function set_alpha_highlights()
+          -- These commands will run every time you switch colorschemes
+
+          -- Use vim.cmd for simple highlight definitions
+          vim.cmd [[highlight AlphaHeader guifg=#FF0000 gui=bold]]
+          vim.cmd [[highlight AlphaShortcut guifg=#00FF00]]
+          vim.cmd [[highlight AlphaButtons guifg=#0000FF]]
+          vim.cmd [[highlight AlphaFooter guifg=#FFFF00]]
+
+          -- Or use the Lua API nvim_set_hl (use this if you prefer Lua table syntax)
+          -- vim.api.nvim_set_hl(0, "AlphaHeader", { fg = "#FF0000", bold = true })
+        end
+
+        -- Create an autocommand group to manage the highlights
+        vim.api.nvim_create_autocmd("ColorScheme", {
+          group = vim.api.nvim_create_augroup("AlphaCustomization", { clear = true }),
+          pattern = "*", -- Match any colorscheme change
+          callback = set_alpha_highlights, -- Call the function above
+        })
+
+        -- Also call it once when Neovim starts, in case the colorscheme is already set
+        set_alpha_highlights()
 
         ------------------------------------------------------------------------------------------------------------------
         dashboard.section.header.val = vim.fn.readfile(vim.fs.normalize("./header.txt"))
