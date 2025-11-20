@@ -8,6 +8,7 @@ return {
 		local dashboard = require("alpha.themes.dashboard")
 		local time = os.date("%H:%M")
 		local date = os.date(" %a %d %b")
+        local header_path = vim.fn.stdpath('config') .. '/header.txt'
 
 		vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
 
@@ -27,7 +28,7 @@ return {
 		end
 
         ------------------------------------------------------------------------------------------------------------------
-        dashboard.section.header.val = vim.fn.readfile(vim.fs.normalize("./header.txt"))
+        dashboard.section.header.val = vim.fn.readfile(header_path)
         dashboard.section.header.opts.hl = "@comment"
 
 		dashboard.section.buttons.val = {
