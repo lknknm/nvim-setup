@@ -29,5 +29,10 @@ return {
         vim.api.nvim_set_hl(0, 'TreesitterContext', { link = 'Function' })
         vim.api.nvim_set_hl(0, 'TreesitterContextLineNumber', { link = 'Function' })
         vim.api.nvim_set_hl(0, 'MiniIndentScopeSymbol', { link = 'Function' })
+
+        vim.api.nvim_set_hl(0, 'SnacksDashboardHeader', { link = "SnacksDashboardDir" })
+        vim.api.nvim_set_hl(0, 'SnacksDashboardKey', { link = "SnacksDashboardDir" })
+        vim.api.nvim_set_hl(0, 'SnacksDashboardDesc', { link = "SnacksDashboardDir" })
+        vim.api.nvim_set_hl(0, 'SnacksDashboardIcon', { link = "SnacksDashboardDir" })
     end
 }
