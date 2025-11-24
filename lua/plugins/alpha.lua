@@ -9,6 +9,7 @@ return {
             pane_gap = 4,
 			preset = {
 				keys = {
+                    { desc = "Welcome" },
 					{
 						icon = " ",
 						key = "f",
@@ -22,6 +23,12 @@ return {
 						desc = "Find Text",
 						action = ":lua Snacks.dashboard.pick('live_grep')",
 					},
+					{
+						icon = " ",
+						key = "o",
+						desc = "Jump to previous",
+						action = "<C-o>",
+                    },
 					{
 						icon = " ",
 						key = "r",
@@ -104,7 +111,7 @@ return {
                 {
                     pane = 2,
                     { section = "keys", gap = 1,},
-                    { section = "startup",  padding = { 0, 36 } },
+                                { section = "startup",  padding = { 0, 32 } },
                 },
 			},
 		},
