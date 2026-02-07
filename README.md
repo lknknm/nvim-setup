@@ -1,4 +1,6 @@
-### Neovim setup
+### lknknm neovim setup
 
-<img width="2716" height="1695" alt="image" src="https://github.com/user-attachments/assets/c3c52d9c-77d0-42ba-b520-d44da5e8b994" />
+The overall idea of this setup is not to transform neovim into a full-fledged IDE, but to provide enough modularity and concision 
+in order to use it along other tools as I personally might see fit. 
 
+<img width="2827" height="1762" alt="image" src="https://github.com/user-attachments/assets/94c286b9-7fab-4183-b1c9-c2eaf5652d26" />
