@@ -13,4 +13,6 @@ regard because I can have some uniformity across basically any platform, and if 
 
 This is also one of the reasons I didn't want to "revolutionise" neovim and transform it into an IDE. This way I can easily choose 
 compiler I want to use and when (usually Clang or GCC), fireup the LLDB debugger + use it fully as CLI tool, and even which terminal emulator I might opt for.
-Favouring the terminal and CLI tools has been an impressive speed boost for me and really good for keeping the flow between 
+Favouring the terminal and CLI tools has been an impressive speed boost for me and really good for keeping the flow between different stages of development.
+
+<img width="2823" height="1507" alt="image" src="https://github.com/user-attachments/assets/c1bc300f-e2bf-4f20-a2bc-71c390d0f0e5" />
