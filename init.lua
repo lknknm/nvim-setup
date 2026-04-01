@@ -59,7 +59,7 @@ vim.keymap.set({'n', 'v'}, '<leader>sr', ':%s/', { noremap = true, silent = true
 
 ------------------------------------------------------------------------------------------
 -- Register Macros::
-vim.fn.setreg('l', 'oUE_LOG(LogTemp, Error, TEXT("[>>>] %hs : %i"), std::source_location::current().function_name(), std::source_location::current().line());\27')
+vim.fn.setreg('l', 'oUE_LOG(LogTemp, Error, TEXT("[LOCAL] <<<< %hs : %i"), std::source_location::current().function_name(), std::source_location::current().line());\27')
 
 ------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
