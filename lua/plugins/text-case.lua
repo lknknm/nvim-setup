@@ -6,14 +6,13 @@ return {
         require("telescope").load_extension("textcase")
     end,
     keys = {
-        "ga", -- Default prefix for quick-change
+        { "ga", mode = { "n", "x" } }, -- Default prefix for quick-change
         { "ga.", "<cmd>TextCaseOpenTelescope<CR>", mode = { "n", "x" }, desc = "Telescope Case Menu" },
     },
     cmd = {
         "Subs",
         "TextCaseOpenTelescope",
         "TextCaseOpenTelescopeQuickChange",
-        "TextCaseOpenTelescopeLSPChange",
         "TextCaseStartReplacingCommand",
     },
 }

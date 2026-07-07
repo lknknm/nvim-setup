@@ -12,7 +12,9 @@ function M.find_alternate()
     if is_header then
         alternate_patterns = {
             string.format('%s/**/%s.cpp', root_dir, file_name),
-            string.format('%s/**/Private/**/%s.cpp', root_dir, file_name)
+            string.format('%s/**/%s.cxx', root_dir, file_name),
+            string.format('%s/**/Private/**/%s.cpp', root_dir, file_name),
+            string.format('%s/**/Private/**/%s.cxx', root_dir, file_name),
         }
         pattern_msgs = {
             string.format("Anywhere: %s.cpp", file_name),
@@ -21,6 +23,7 @@ function M.find_alternate()
     else
         alternate_patterns = {
             string.format('%s/**/%s.h', root_dir, file_name),
+            string.format('%s/**/%s.hxx', root_dir, file_name),
             string.format('%s/**/Public/**/%s.h', root_dir, file_name)
         }
         pattern_msgs = {
