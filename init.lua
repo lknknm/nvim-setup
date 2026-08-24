@@ -58,19 +58,20 @@ vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', { noremap = true, silent = true
 vim.keymap.set({ "n", "v" }, "<leader>sr", ":%s/", { noremap = true, silent = true })
 
 ------------------------------------------------------------------------------------------
--- Register Macros::
-vim.fn.setreg(
-	"l",
-	'oUE_LOG(LogTemp, Error, TEXT("[lm-local] -> [ %hs : %i ]"), std::source_location::current().function_name(), std::source_location::current().line());\27'
-)
-
-------------------------------------------------------------------------------------------
+-- https://github.com/neovim/neovim/issues/39032
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "markdown",
 	callback = function()
 		vim.treesitter.stop()
 	end,
 })
+
+------------------------------------------------------------------------------------------
+-- Register Macros::
+vim.fn.setreg(
+	"l",
+	'oUE_LOG(LogTemp, Error, TEXT("[lm-local] -> [ %hs : %i ]"), std::source_location::current().function_name(), std::source_location::current().line());\27'
+)
 
 ------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
